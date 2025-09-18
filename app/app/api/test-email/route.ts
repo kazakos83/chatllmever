@@ -7,68 +7,84 @@ export const dynamic = "force-dynamic"
 export async function GET(req: NextRequest) {
   try {
     // Check if environment variables are set
+    const config = {
+      hasApiKey: !!process.env.SENDGRID_API_KEY,
+      hasFromEmail: !!process.env.SENDGRID_FROM_EMAIL,
+      hasToEmail: !!process.env.SENDGRID_TO_EMAIL,
+      fromEmail: process.env.SENDGRID_FROM_EMAIL || 'not set',
+      toEmail: process.env.SENDGRID_TO_EMAIL || 'not set',
+      apiKeyPrefix: process.env.SENDGRID_API_KEY?.substring(0, 10) + '...' || 'not set'
+    }
+
     if (!process.env.SENDGRID_API_KEY) {
       return NextResponse.json({ 
         error: 'SENDGRID_API_KEY is missing',
-        config: {
-          hasApiKey: false,
-          hasFromEmail: !!process.env.SENDGRID_FROM_EMAIL,
-          hasToEmail: !!process.env.SENDGRID_TO_EMAIL,
-          fromEmail: process.env.SENDGRID_FROM_EMAIL || 'not set',
-          toEmail: process.env.SENDGRID_TO_EMAIL || 'not set'
-        }
+        config
       }, { status: 400 })
     }
 
     if (!process.env.SENDGRID_FROM_EMAIL) {
       return NextResponse.json({ 
-        error: 'SENDGRID_FROM_EMAIL is missing' 
+        error: 'SENDGRID_FROM_EMAIL is missing',
+        config
       }, { status: 400 })
     }
 
     if (!process.env.SENDGRID_TO_EMAIL) {
       return NextResponse.json({ 
-        error: 'SENDGRID_TO_EMAIL is missing' 
+        error: 'SENDGRID_TO_EMAIL is missing',
+        config
       }, { status: 400 })
     }
 
     // Set API key
     sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
-    // Test email
-    const msg = {
-      to: process.env.SENDGRID_TO_EMAIL,
-      from: {
-        email: process.env.SENDGRID_FROM_EMAIL,
-        name: 'Everguard Intelligence Test'
-      },
-      subject: 'SendGrid Test Email - Everguard Intelligence',
-      html: `
-        <div style="font-family: Arial, sans-serif; padding: 20px; background: #f4f4f4;">
-          <div style="max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px;">
-            <h2 style="color: #DC2626;">SendGrid Test Email</h2>
-            <p>This is a test email to verify your SendGrid configuration is working correctly.</p>
-            <p><strong>Test Details:</strong></p>
-            <ul>
-              <li>From: ${process.env.SENDGRID_FROM_EMAIL}</li>
-              <li>To: ${process.env.SENDGRID_TO_EMAIL}</li>
-              <li>Time: ${new Date().toISOString()}</li>
-            </ul>
-            <p style="color: #10B981;">✅ If you received this email, your SendGrid configuration is working!</p>
-          </div>
-        </div>
-      `
+    // Test both admin and client emails
+    const testData = {
+      name: 'Test User',
+      email: process.env.SENDGRID_TO_EMAIL, // Send client email to same address for testing
+      phone: '1800-EVERGUARD',
+      company: 'Test Company',
+      service: 'corporate-intelligence',
+      urgency: 'medium',
+      message: 'This is a test submission to verify email functionality.',
+      budget: '5k-10k',
+      inquiryId: 'TEST-' + Date.now()
     }
 
-    const result = await sgMail.send(msg)
-    
+    // Import the email functions
+    const { sendAdminNotification, sendClientAcknowledgment } = await import('@/lib/sendgrid')
+
+    // Test admin notification
+    console.log('Testing admin notification...')
+    const adminResult = await sendAdminNotification(testData)
+    console.log('Admin email result:', adminResult)
+
+    // Test client acknowledgment  
+    console.log('Testing client acknowledgment...')
+    const clientResult = await sendClientAcknowledgment(testData)
+    console.log('Client email result:', clientResult)
+
     return NextResponse.json({ 
-      success: true, 
-      message: 'Test email sent successfully',
-      messageId: result[0].headers['x-message-id'],
-      config: {
+      success: true,
+      message: 'Email tests completed',
+      config,
+      results: {
+        adminEmail: {
+          success: adminResult.success,
+          error: adminResult.error || null
+        },
+        clientEmail: {
+          success: clientResult.success, 
+          error: clientResult.error || null
+        }
+      },
+      testData: {
         fromEmail: process.env.SENDGRID_FROM_EMAIL,
-        toEmail: process.env.SENDGRID_TO_EMAIL
+        adminToEmail: process.env.SENDGRID_TO_EMAIL,
+        clientToEmail: testData.email,
+        timestamp: new Date().toISOString()
       }
     })
     
@@ -76,11 +92,12 @@ export async function GET(req: NextRequest) {
     console.error('SendGrid test error:', error)
     
     return NextResponse.json({ 
-      error: 'Failed to send test email',
+      error: 'Failed to run email test',
       details: error.message,
       code: error.code,
       statusCode: error.response?.status,
-      body: error.response?.body
+      body: error.response?.body,
+      stack: error.stack
     }, { status: 500 })
   }
 }

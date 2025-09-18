@@ -193,9 +193,22 @@ const getClientEmailTemplate = (data: ContactFormData) => {
 
 // Send admin notification email
 export const sendAdminNotification = async (data: ContactFormData) => {
+  console.log('SendGrid admin email attempt:', {
+    hasApiKey: !!process.env.SENDGRID_API_KEY,
+    hasFromEmail: !!process.env.SENDGRID_FROM_EMAIL,
+    hasToEmail: !!process.env.SENDGRID_TO_EMAIL,
+    fromEmail: process.env.SENDGRID_FROM_EMAIL,
+    toEmail: process.env.SENDGRID_TO_EMAIL
+  })
+
   if (!process.env.SENDGRID_API_KEY || !process.env.SENDGRID_FROM_EMAIL || !process.env.SENDGRID_TO_EMAIL) {
-    console.warn('SendGrid configuration missing, skipping admin email')
-    return { success: false, error: 'Email configuration missing' }
+    const missingVars = []
+    if (!process.env.SENDGRID_API_KEY) missingVars.push('SENDGRID_API_KEY')
+    if (!process.env.SENDGRID_FROM_EMAIL) missingVars.push('SENDGRID_FROM_EMAIL')  
+    if (!process.env.SENDGRID_TO_EMAIL) missingVars.push('SENDGRID_TO_EMAIL')
+    
+    console.error('SendGrid configuration missing:', missingVars)
+    return { success: false, error: `Missing environment variables: ${missingVars.join(', ')}` }
   }
 
   const msg = {
@@ -208,20 +221,42 @@ export const sendAdminNotification = async (data: ContactFormData) => {
     html: getAdminEmailTemplate(data),
   }
 
+  console.log('Sending admin email with subject:', msg.subject)
+
   try {
-    await sgMail.send(msg)
-    return { success: true }
-  } catch (error) {
-    console.error('SendGrid admin email error:', error)
-    return { success: false, error: error }
+    const result = await sgMail.send(msg)
+    console.log('Admin email sent successfully:', {
+      messageId: result[0].headers['x-message-id'],
+      statusCode: result[0].statusCode
+    })
+    return { success: true, messageId: result[0].headers['x-message-id'] }
+  } catch (error: any) {
+    console.error('SendGrid admin email error:', {
+      message: error.message,
+      code: error.code,
+      statusCode: error.response?.status,
+      body: error.response?.body
+    })
+    return { success: false, error: error.message || error }
   }
 }
 
 // Send client acknowledgment email
 export const sendClientAcknowledgment = async (data: ContactFormData) => {
+  console.log('SendGrid client email attempt:', {
+    hasApiKey: !!process.env.SENDGRID_API_KEY,
+    hasFromEmail: !!process.env.SENDGRID_FROM_EMAIL,
+    fromEmail: process.env.SENDGRID_FROM_EMAIL,
+    toEmail: data.email
+  })
+
   if (!process.env.SENDGRID_API_KEY || !process.env.SENDGRID_FROM_EMAIL) {
-    console.warn('SendGrid configuration missing, skipping client email')
-    return { success: false, error: 'Email configuration missing' }
+    const missingVars = []
+    if (!process.env.SENDGRID_API_KEY) missingVars.push('SENDGRID_API_KEY')
+    if (!process.env.SENDGRID_FROM_EMAIL) missingVars.push('SENDGRID_FROM_EMAIL')
+    
+    console.error('SendGrid configuration missing for client email:', missingVars)
+    return { success: false, error: `Missing environment variables: ${missingVars.join(', ')}` }
   }
 
   const msg = {
@@ -234,12 +269,23 @@ export const sendClientAcknowledgment = async (data: ContactFormData) => {
     html: getClientEmailTemplate(data),
   }
 
+  console.log('Sending client email with subject:', msg.subject)
+
   try {
-    await sgMail.send(msg)
-    return { success: true }
-  } catch (error) {
-    console.error('SendGrid client email error:', error)
-    return { success: false, error: error }
+    const result = await sgMail.send(msg)
+    console.log('Client email sent successfully:', {
+      messageId: result[0].headers['x-message-id'],
+      statusCode: result[0].statusCode
+    })
+    return { success: true, messageId: result[0].headers['x-message-id'] }
+  } catch (error: any) {
+    console.error('SendGrid client email error:', {
+      message: error.message,
+      code: error.code,
+      statusCode: error.response?.status,
+      body: error.response?.body
+    })
+    return { success: false, error: error.message || error }
   }
 }
 
