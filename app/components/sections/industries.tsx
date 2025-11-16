@@ -65,7 +65,7 @@ const Industries = () => {
         </motion.div>
 
         {/* Industries Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 max-w-none">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {industries?.map((industry, index) => {
             const Icon = industry?.icon
             return (
@@ -76,24 +76,28 @@ const Industries = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
                 <Card className="h-full hover:shadow-xl transition-all duration-300 border-0 shadow-lg group cursor-pointer">
-                  <CardContent className="p-8">
-                    <div className="mb-6">
-                      <div className="w-16 h-16 bg-red-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-red-600 transition-colors duration-300">
-                        {Icon && <Icon className="h-8 w-8 text-red-600 group-hover:text-white transition-colors duration-300" />}
+                  <CardContent className="p-6">
+                    {/* Icon and Title Section */}
+                    <div className="mb-5">
+                      <div className="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-red-600 transition-colors duration-300">
+                        {Icon && <Icon className="h-7 w-7 text-red-600 group-hover:text-white transition-colors duration-300" />}
                       </div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      <h3 className="text-lg font-bold text-gray-900 mb-2 leading-tight">
                         {industry?.title}
                       </h3>
-                      <p className="text-gray-600 mb-6 leading-relaxed">
-                        {industry?.description}
-                      </p>
                     </div>
                     
-                    <div className="space-y-2">
-                      <h4 className="font-semibold text-gray-800 text-sm uppercase tracking-wide">Key Services:</h4>
-                      <div className="grid grid-cols-2 gap-2">
+                    {/* Description */}
+                    <p className="text-sm text-gray-600 mb-5 leading-relaxed">
+                      {industry?.description}
+                    </p>
+                    
+                    {/* Services List */}
+                    <div className="space-y-3 pt-4 border-t border-gray-100">
+                      <h4 className="font-semibold text-gray-800 text-xs uppercase tracking-wider">Key Services:</h4>
+                      <div className="flex flex-wrap gap-2">
                         {industry?.services?.map((service) => (
-                          <div key={service} className="text-sm text-gray-600 bg-gray-50 rounded px-3 py-1">
+                          <div key={service} className="text-xs text-gray-700 bg-gray-50 rounded-md px-3 py-1.5 hover:bg-red-50 hover:text-red-700 transition-colors duration-200">
                             {service}
                           </div>
                         ))}
