@@ -11,16 +11,16 @@ const ContactInfo = () => {
     {
       icon: Phone,
       title: 'Phone',
-      primary: '1800-EVERGUARD',
-      secondary: '+61 1800 383 742',
+      primary: '1300 718 760',
+      secondary: 'Available 24/7',
       description: '24/7 emergency hotline available'
     },
     {
       icon: Mail,
       title: 'Email',
       primary: 'info@everguardgroup.com.au',
-      secondary: 'urgent@everguard.com.au',
-      description: 'Response within 24 hours guaranteed'
+      secondary: 'Response within 24 hours',
+      description: 'Professional support for all inquiries'
     }
   ]
 
@@ -177,7 +177,7 @@ const ContactInfo = () => {
                 asChild
                 className="everguard-gradient text-white hover:opacity-90 font-semibold"
               >
-                <a href="tel:+61-1800-EVERGUARD">Call Emergency Line</a>
+                <a href="tel:1300718760">Call Emergency Line</a>
               </Button>
             </CardContent>
           </Card>

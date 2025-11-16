@@ -21,8 +21,8 @@ const ContactHero = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Ready to discuss your investigation needs? Contact our expert team for a 
-            confidential consultation. We're available 24/7 to assist you.
+            Speak with an investigator about your matter. Request a confidential consultation for 
+            professional investigation services. We're available 24/7 across Australia.
           </p>
 
           {/* Quick Contact Info */}
@@ -37,7 +37,7 @@ const ContactHero = () => {
                 <Phone className="h-6 w-6 text-white" />
               </div>
               <div className="font-semibold text-gray-900">Call Us</div>
-              <div className="text-gray-600 text-sm">1800-EVERGUARD</div>
+              <div className="text-gray-600 text-sm">1300 718 760</div>
             </motion.div>
 
             <motion.div

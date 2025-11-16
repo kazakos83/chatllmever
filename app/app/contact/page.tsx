@@ -6,8 +6,8 @@ import ContactForm from '@/components/contact-sections/contact-form'
 import ContactInfo from '@/components/contact-sections/contact-info'
 
 export const metadata = {
-  title: 'Contact Us | Everguard Intelligence',
-  description: 'Get in touch with Everguard Intelligence for a confidential consultation. Available 24/7 across Australia.',
+  title: 'Contact Us | Everguard Group',
+  description: 'Speak with an investigator about your matter. Request a confidential consultation for private investigation and intelligence services. Available 24/7 across Australia.',
 }
 
 export default function ContactPage() {

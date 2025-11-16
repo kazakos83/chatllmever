@@ -15,39 +15,33 @@ const Industries = () => {
   const industries = [
     {
       icon: Shield,
-      title: 'Insurance Companies',
-      description: 'Comprehensive investigation services for claim verification, fraud detection, and risk assessment.',
-      services: ['Claim Investigations', 'Fraud Detection', 'Surveillance', 'Medical Assessments']
-    },
-    {
-      icon: Building,
-      title: 'Corporate Enterprises',
-      description: 'Business intelligence, due diligence, and corporate investigation services for informed decision-making.',
-      services: ['Due Diligence', 'Background Checks', 'Corporate Intelligence', 'Risk Management']
-    },
-    {
-      icon: Landmark,
-      title: 'Government Agencies',
-      description: 'Specialized investigative support for government departments and public sector organizations.',
-      services: ['Compliance Investigations', 'Security Clearances', 'Public Interest Matters', 'Regulatory Support']
+      title: 'Insurance Companies & Loss Adjusters',
+      description: 'Comprehensive investigation services for claim verification, fraud detection, and risk assessment supporting insurance operations.',
+      services: ['Claim Investigations', 'Fraud Detection', 'Surveillance', 'Factual Enquiries']
     },
     {
       icon: Scale,
-      title: 'Legal Firms',
-      description: 'Professional investigation services to support legal proceedings and case preparation.',
-      services: ['Evidence Gathering', 'Witness Location', 'Asset Searches', 'Court Support']
+      title: 'Law Firms & Litigation Teams',
+      description: 'Professional investigation services supporting legal proceedings, case preparation, and evidence gathering for litigation matters.',
+      services: ['Evidence Gathering', 'Witness Location', 'Process Serving', 'Court Support']
     },
     {
-      icon: CreditCard,
-      title: 'Financial Institutions',
-      description: 'Fraud prevention, asset recovery, and financial investigation services for banks and credit unions.',
-      services: ['Financial Fraud', 'Asset Recovery', 'Credit Investigations', 'AML Support']
+      icon: Building,
+      title: 'Corporate Clients & HR Departments',
+      description: 'Corporate intelligence, due diligence, and background checks supporting business decisions and workforce integrity.',
+      services: ['Due Diligence', 'Background Checks', 'Corporate Intelligence', 'Employee Investigations']
+    },
+    {
+      icon: Landmark,
+      title: 'Government & Regulatory Bodies',
+      description: 'Specialized investigative support for government departments, public sector organizations, and regulatory compliance matters.',
+      services: ['Compliance Investigations', 'Regulatory Support', 'Public Interest Matters', 'Verification Services']
     },
     {
       icon: Briefcase,
       title: 'Private Clients',
-      description: 'Discreet personal investigation services for individuals requiring professional assistance.',
-      services: ['Personal Security', 'Family Matters', 'Missing Persons', 'Background Verification']
+      description: 'Discreet investigation services for family law, infidelity matters, missing persons, and sensitive personal investigations.',
+      services: ['Family Law Matters', 'Infidelity Investigations', 'Missing Persons', 'Personal Security']
     }
   ]
 
@@ -71,7 +65,7 @@ const Industries = () => {
         </motion.div>
 
         {/* Industries Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 max-w-none">
           {industries?.map((industry, index) => {
             const Icon = industry?.icon
             return (

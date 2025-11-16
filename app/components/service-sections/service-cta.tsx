@@ -27,8 +27,8 @@ const ServiceCTA = () => {
             Ready to Get <span className="text-red-400">Started?</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Contact our expert team today for a confidential consultation. 
-            We'll discuss your specific needs and provide a tailored solution.
+            Speak with an investigator about your matter. 
+            Request a confidential consultation for professional investigation services.
           </p>
         </motion.div>
 
@@ -52,7 +52,7 @@ const ServiceCTA = () => {
                   asChild
                   className="w-full everguard-gradient text-white hover:opacity-90"
                 >
-                  <a href="tel:+61-1800-EVERGUARD">1800-EVERGUARD</a>
+                  <a href="tel:1300718760">1300 718 760</a>
                 </Button>
               </CardContent>
             </Card>
@@ -103,7 +103,7 @@ const ServiceCTA = () => {
                   className="w-full everguard-gradient text-white hover:opacity-90 group"
                 >
                   <Link href="/contact" className="flex items-center justify-center space-x-2">
-                    <span>Get Quote</span>
+                    <span>Request a Proposal</span>
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>

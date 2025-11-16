@@ -8,8 +8,8 @@ import Values from '@/components/about-sections/values'
 import Certifications from '@/components/about-sections/certifications'
 
 export const metadata = {
-  title: 'About Us | Everguard Intelligence',
-  description: 'Learn about Everguard Intelligence, our mission, values, and the expert team behind Australia\'s premier investigation services.',
+  title: 'About Us | Everguard Group',
+  description: 'Learn about Everguard Group, a licensed private investigation and intelligence agency delivering discreet, evidence-driven investigative services across Australia.',
 }
 
 export default function AboutPage() {

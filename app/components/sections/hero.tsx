@@ -121,15 +121,15 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 1 }}
-            className="text-6xl md:text-8xl font-bold text-gray-900 leading-[0.9] text-premium"
+            className="text-5xl md:text-7xl font-bold text-gray-900 leading-tight text-premium"
           >
-            Premier Corporate
+            Specialist Private
             <br />
             <span className="everguard-text-gradient">
-              Intelligence
+              Investigation
             </span>
             <br />
-            Services
+            & Intelligence Services
           </motion.h1>
 
           {/* Enhanced Subtitle */}
@@ -139,10 +139,10 @@ const Hero = () => {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed text-elegant font-light"
           >
-            Delivering comprehensive investigation solutions to insurance companies, 
-            corporate enterprises, and government agencies across Australia with 
-            <span className="font-semibold text-gray-900"> unmatched expertise</span> and 
-            <span className="font-semibold text-gray-900"> absolute discretion</span>
+            Discreet surveillance, insurance investigations, and corporate intelligence solutions 
+            for insurers, legal professionals, businesses, and private clients — delivered with 
+            <span className="font-semibold text-gray-900"> absolute discretion</span> and 
+            <span className="font-semibold text-gray-900"> proven results</span>
           </motion.p>
 
           {/* Enhanced Feature Pills */}
@@ -152,7 +152,7 @@ const Hero = () => {
             transition={{ delay: 0.8, duration: 0.8 }}
             className="flex flex-wrap justify-center gap-4 max-w-3xl mx-auto"
           >
-            {['OSINT Specialists', 'Skip Tracing', 'Fraud Detection', 'Surveillance']?.map((feature, index) => (
+            {['Surveillance', 'Insurance Investigations', 'Corporate Intelligence', 'Background Checks']?.map((feature, index) => (
               <motion.span
                 key={feature}
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -178,7 +178,7 @@ const Hero = () => {
               className="everguard-gradient text-white hover:opacity-90 text-lg px-10 py-7 group btn-modern shadow-glow rounded-2xl font-semibold"
             >
               <Link href="/contact" className="flex items-center space-x-3">
-                <span>Get Free Consultation</span>
+                <span>Request a Confidential Consultation</span>
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-2 transition-all duration-300" />
               </Link>
             </Button>
@@ -187,9 +187,11 @@ const Hero = () => {
               asChild
               variant="outline"
               size="lg"
-              className="bg-white border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white text-lg px-10 py-7 rounded-2xl font-semibold shadow-premium hover:shadow-glow transition-all duration-300"
+              className="bg-white/95 border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white text-lg px-10 py-7 rounded-2xl font-semibold shadow-premium hover:shadow-glow transition-all duration-300 backdrop-blur-sm"
             >
-              <Link href="/services">View Services</Link>
+              <Link href="/services" className="text-red-600 hover:text-white">
+                View Services
+              </Link>
             </Button>
           </motion.div>
 

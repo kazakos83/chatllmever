@@ -16,40 +16,40 @@ const Services = () => {
 
   const services = [
     {
-      icon: Shield,
-      title: 'Corporate Intelligence',
-      description: 'Comprehensive corporate investigations, due diligence, and business intelligence gathering for informed decision-making.',
-      features: ['Due Diligence', 'Business Intelligence', 'Corporate Investigations', 'Risk Assessment']
-    },
-    {
-      icon: FileSearch,
-      title: 'Insurance Investigations',
-      description: 'Specialized investigation services for insurance companies including claim verification and fraud detection.',
-      features: ['Claim Verification', 'Fraud Detection', 'Surveillance', 'Medical Investigations']
-    },
-    {
-      icon: Search,
-      title: 'OSINT Services',
-      description: 'Advanced Open Source Intelligence gathering using cutting-edge technology and analytical techniques.',
-      features: ['Social Media Analysis', 'Digital Footprints', 'Online Research', 'Data Mining']
-    },
-    {
-      icon: Users,
-      title: 'Skip Tracing',
-      description: 'Professional skip tracing services to locate individuals for legal, financial, and personal matters.',
-      features: ['Asset Location', 'Witness Location', 'Debtor Tracing', 'Missing Persons']
-    },
-    {
       icon: Eye,
-      title: 'Surveillance',
-      description: 'Professional surveillance services conducted by experienced operatives with advanced equipment.',
+      title: 'Surveillance Operations',
+      description: 'Professional surveillance services with experienced operatives and advanced equipment providing court-ready documentation for insurance, legal, and private matters.',
       features: ['Mobile Surveillance', 'Static Surveillance', 'Video Documentation', 'Court-Ready Reports']
     },
     {
-      icon: AlertTriangle,
-      title: 'Background Checks',
-      description: 'Thorough background verification services for employment, tenancy, and partnership decisions.',
+      icon: FileSearch,
+      title: 'Factual & Insurance Investigations',
+      description: 'Thorough factual investigations and insurance claim verification services supporting insurers, loss adjusters, and legal professionals with evidence-driven insights.',
+      features: ['Claim Verification', 'Witness Statements', 'Scene Examinations', 'Medical Investigations']
+    },
+    {
+      icon: Shield,
+      title: 'Corporate Intelligence & Due Diligence',
+      description: 'Comprehensive corporate investigations, business intelligence, and due diligence services for informed decision-making and risk assessment.',
+      features: ['Due Diligence', 'Business Intelligence', 'Corporate Investigations', 'Risk Assessment']
+    },
+    {
+      icon: Users,
+      title: 'Background Checks & Profiling',
+      description: 'Detailed background verification and profiling services for employment screening, tenancy decisions, and partnership assessments.',
       features: ['Employment Screening', 'Criminal History', 'Financial Checks', 'Reference Verification']
+    },
+    {
+      icon: AlertTriangle,
+      title: 'Insurance & Fraud Investigations',
+      description: 'Specialist fraud detection and investigation services supporting insurance companies with accurate intelligence and comprehensive documentation.',
+      features: ['Fraud Detection', 'Claim Analysis', 'Asset Investigation', 'Surveillance Evidence']
+    },
+    {
+      icon: Search,
+      title: 'Process Serving & Field Visits',
+      description: 'Professional process serving and field investigation services across Australia supporting legal proceedings and corporate requirements.',
+      features: ['Legal Document Service', 'Field Enquiries', 'Witness Location', 'Site Visits']
     }
   ]
 
@@ -171,7 +171,7 @@ const Services = () => {
             size="lg"
             className="everguard-gradient text-white hover:opacity-90 text-lg px-8 py-6"
           >
-            <Link href="/contact">Request a Consultation</Link>
+            <Link href="/contact">Request a Confidential Consultation</Link>
           </Button>
         </motion.div>
       </div>

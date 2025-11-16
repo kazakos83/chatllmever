@@ -8,13 +8,13 @@ import { Toaster } from 'sonner'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Everguard Intelligence | Premier Corporate Investigation Services Australia',
-  description: 'Leading corporate intelligence and private investigation services across Australia. Specializing in insurance investigations, OSINT, skip tracing, fraud detection, and surveillance. Licensed and professional.',
-  keywords: 'corporate intelligence, private investigation, insurance investigations, OSINT, skip tracing, fraud detection, surveillance, background checks, Australia',
-  authors: [{ name: 'Everguard Intelligence' }],
+  title: 'Everguard Group | Specialist Private Investigation & Intelligence Services Australia',
+  description: 'Licensed private investigation and intelligence agency providing surveillance, factual investigations, corporate intelligence, and background checks across Australia. Discreet, professional, court-ready.',
+  keywords: 'private investigator, surveillance, insurance investigations, factual investigations, corporate intelligence, background checks, due diligence, Australia investigator, licensed investigator',
+  authors: [{ name: 'Everguard Group' }],
   openGraph: {
-    title: 'Everguard Intelligence | Premier Corporate Investigation Services Australia',
-    description: 'Leading corporate intelligence and private investigation services across Australia.',
+    title: 'Everguard Group | Specialist Private Investigation & Intelligence Services Australia',
+    description: 'Licensed private investigation and intelligence agency providing discreet surveillance, factual investigations, and corporate intelligence across Australia.',
     type: 'website',
   },
 }

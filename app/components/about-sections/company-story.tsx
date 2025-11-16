@@ -16,7 +16,7 @@ const CompanyStory = () => {
     {
       year: '2009',
       title: 'Company Founded',
-      description: 'Everguard Intelligence was established with a vision to transform the investigation industry in Australia.',
+      description: 'Everguard Group was established as a licensed private investigation agency with a focus on professional, discreet investigative services.',
       icon: Calendar
     },
     {

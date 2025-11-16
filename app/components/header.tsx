@@ -59,14 +59,14 @@ const Header = () => {
                 </Link>
               ))}
               <div className="flex items-center space-x-4 ml-6">
-                <a href="tel:+61-1800-EVERGUARD" className="text-red-600 hover:text-red-700">
+                <a href="tel:1300718760" className="text-red-600 hover:text-red-700">
                   <Phone className="h-5 w-5" />
                 </a>
                 <Button
                   asChild
                   className="everguard-gradient text-white hover:opacity-90 btn-modern shadow-glow rounded-xl px-6 py-2 font-semibold"
                 >
-                  <Link href="/contact">Get Quote</Link>
+                  <Link href="/contact">Request Consultation</Link>
                 </Button>
               </div>
             </nav>
@@ -109,13 +109,13 @@ const Header = () => {
                 <div className="pt-4 border-t">
                   <div className="flex items-center space-x-4 mb-4">
                     <Phone className="h-5 w-5 text-red-600" />
-                    <span className="text-gray-700">1800-EVERGUARD</span>
+                    <span className="text-gray-700">1300 718 760</span>
                   </div>
                   <Button
                     asChild
                     className="w-full everguard-gradient text-white hover:opacity-90 btn-modern rounded-xl py-3 font-semibold shadow-glow"
                   >
-                    <Link href="/contact">Get Quote</Link>
+                    <Link href="/contact">Request Consultation</Link>
                   </Button>
                 </div>
               </div>

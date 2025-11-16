@@ -1,6 +1,6 @@
 
 import { NextRequest, NextResponse } from 'next/server'
-import { sendAdminNotification, sendClientAcknowledgment } from '@/lib/sendgrid'
+import { sendAdminNotification, sendClientAcknowledgment } from '@/lib/resend'
 
 export const dynamic = "force-dynamic"
 
@@ -69,11 +69,7 @@ export async function POST(req: NextRequest) {
       console.error('Admin email failed:', {
         error: adminEmailResult.reason,
         config: {
-          hasApiKey: !!process.env.SENDGRID_API_KEY,
-          hasFromEmail: !!process.env.SENDGRID_FROM_EMAIL,
-          hasToEmail: !!process.env.SENDGRID_TO_EMAIL,
-          fromEmail: process.env.SENDGRID_FROM_EMAIL,
-          toEmail: process.env.SENDGRID_TO_EMAIL
+          hasApiKey: !!process.env.RESEND_API_KEY
         }
       })
     }
@@ -85,8 +81,8 @@ export async function POST(req: NextRequest) {
     }
 
     // Return success if at least admin email is sent
-    const adminEmailSent = adminEmailResult.status === 'fulfilled' && adminEmailResult.value?.success
-    const clientEmailSent = clientEmailResult.status === 'fulfilled' && clientEmailResult.value?.success
+    const adminEmailSent = adminEmailResult.status === 'fulfilled' && adminEmailResult.value?.data?.id
+    const clientEmailSent = clientEmailResult.status === 'fulfilled' && clientEmailResult.value?.data?.id
 
     if (!adminEmailSent && !clientEmailSent) {
       throw new Error('Failed to send notification emails')

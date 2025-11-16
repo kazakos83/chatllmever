@@ -42,8 +42,8 @@ const CTA = () => {
           </h2>
           
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Contact us today for a confidential consultation. Our expert team is ready to assist 
-            with your investigation and intelligence needs.
+            Speak with an investigator about your matter. Our specialist team is ready to assist 
+            with discreet, professional investigation services.
           </p>
 
           {/* Contact Methods */}
@@ -59,7 +59,7 @@ const CTA = () => {
               </div>
               <div>
                 <div className="font-semibold">Call Us</div>
-                <div className="text-gray-300">1800-EVERGUARD</div>
+                <div className="text-gray-300">1300 718 760</div>
               </div>
             </div>
             
@@ -89,7 +89,7 @@ const CTA = () => {
               className="everguard-gradient text-white hover:opacity-90 text-lg px-8 py-6 group"
             >
               <Link href="/contact" className="flex items-center space-x-2">
-                <span>Get Free Consultation</span>
+                <span>Request a Confidential Consultation</span>
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
@@ -98,9 +98,11 @@ const CTA = () => {
               asChild
               variant="outline"
               size="lg"
-              className="border-2 border-white text-white hover:bg-white hover:text-gray-900 text-lg px-8 py-6"
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 text-lg px-8 py-6"
             >
-              <Link href="/services">View All Services</Link>
+              <Link href="/services" className="text-white hover:text-gray-900">
+                View All Services
+              </Link>
             </Button>
           </motion.div>
 

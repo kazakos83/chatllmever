@@ -19,8 +19,8 @@ const Footer = () => {
               />
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Premier corporate intelligence and investigation services across Australia. 
-              Trusted by insurance companies, corporations, and government agencies.
+              Specialist private investigation and intelligence services across Australia. 
+              Trusted by insurers, legal professionals, corporations, and government agencies.
             </p>
             <div className="flex items-center space-x-2 text-red-400">
               <CheckCircle className="h-4 w-4" />
@@ -32,11 +32,11 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4 text-red-400">Services</h3>
             <ul className="space-y-2 text-sm">
+              <li><Link href="/services#surveillance" className="text-gray-300 hover:text-red-400 transition-colors">Surveillance Operations</Link></li>
+              <li><Link href="/services#factual" className="text-gray-300 hover:text-red-400 transition-colors">Factual Investigations</Link></li>
               <li><Link href="/services#corporate" className="text-gray-300 hover:text-red-400 transition-colors">Corporate Intelligence</Link></li>
-              <li><Link href="/services#insurance" className="text-gray-300 hover:text-red-400 transition-colors">Insurance Investigations</Link></li>
-              <li><Link href="/services#osint" className="text-gray-300 hover:text-red-400 transition-colors">OSINT Services</Link></li>
-              <li><Link href="/services#skip-tracing" className="text-gray-300 hover:text-red-400 transition-colors">Skip Tracing</Link></li>
-              <li><Link href="/services#fraud" className="text-gray-300 hover:text-red-400 transition-colors">Fraud Detection</Link></li>
+              <li><Link href="/services#background" className="text-gray-300 hover:text-red-400 transition-colors">Background Checks</Link></li>
+              <li><Link href="/services#fraud" className="text-gray-300 hover:text-red-400 transition-colors">Fraud Investigations</Link></li>
             </ul>
           </div>
 
@@ -46,7 +46,7 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               <li className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-red-400" />
-                <span className="text-gray-300">1800-EVERGUARD</span>
+                <span className="text-gray-300">1300 718 760</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-red-400" />
@@ -75,7 +75,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-sm">
-              © 2024 Everguard Intelligence. All rights reserved.
+              © 2024 Everguard Group. All rights reserved.
             </p>
             <div className="flex items-center space-x-6 text-sm">
               <Link href="/contact" className="text-gray-400 hover:text-red-400 transition-colors">Contact Us</Link>

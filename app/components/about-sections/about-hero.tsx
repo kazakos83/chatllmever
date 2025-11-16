@@ -20,7 +20,7 @@ const AboutHero = () => {
           >
             <div className="inline-flex items-center space-x-2 bg-red-50 text-red-700 px-4 py-2 rounded-full text-sm font-medium">
               <Award className="h-4 w-4" />
-              <span>Established Leader in Corporate Intelligence</span>
+              <span>Licensed Private Investigation Agency</span>
             </div>
 
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
@@ -28,14 +28,13 @@ const AboutHero = () => {
               <br />
               <span className="everguard-text-gradient">Everguard</span>
               <br />
-              Intelligence
+              Group
             </h1>
             
             <p className="text-xl text-gray-600 leading-relaxed">
-              For over 15 years, Everguard Intelligence has been Australia's trusted partner 
-              in corporate investigation and intelligence services. We combine traditional 
-              investigative techniques with cutting-edge technology to deliver comprehensive 
-              solutions for our clients.
+              Everguard Group is a licensed private investigation and intelligence agency providing 
+              discreet, evidence-driven investigative services including surveillance, factual investigations, 
+              corporate intelligence, and background checks across Australia.
             </p>
 
             <div className="grid grid-cols-2 gap-6">
@@ -65,9 +64,9 @@ const AboutHero = () => {
                 <h3 className="text-xl font-bold text-gray-900">Our Mission</h3>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                To provide exceptional investigation and intelligence services that empower our 
-                clients to make informed decisions, mitigate risks, and protect their interests 
-                with the highest standards of professionalism and confidentiality.
+                To deliver discreet, evidence-driven investigation and intelligence services that support 
+                informed decision-making for insurers, legal professionals, corporations, government bodies, 
+                and private clients with absolute discretion and proven results.
               </p>
             </div>
 
@@ -76,12 +75,12 @@ const AboutHero = () => {
                 <div className="w-12 h-12 everguard-gradient rounded-lg flex items-center justify-center">
                   <Users className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900">Our Promise</h3>
+                <h3 className="text-xl font-bold text-gray-900">Our Commitment</h3>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                We are committed to delivering accurate, timely, and actionable intelligence 
-                while maintaining the strictest standards of confidentiality and ethical conduct 
-                in all our operations.
+                We support insurance claims, legal disputes, corporate risk assessments, and sensitive personal 
+                matters through disciplined investigative approaches and strict confidentiality protocols with 
+                court-ready reporting standards.
               </p>
             </div>
           </motion.div>

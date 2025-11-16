@@ -172,7 +172,7 @@ const getClientEmailTemplate = (data: ContactFormData) => {
 
         <div class="contact-info">
           <h4 style="color: #DC2626; margin-top: 0;">Need Immediate Assistance?</h4>
-          <p style="margin: 0;"><strong>24/7 Emergency Line:</strong> <a href="tel:+61-1800-EVERGUARD" style="color: #DC2626;">1800-EVERGUARD</a></p>
+          <p style="margin: 0;"><strong>24/7 Emergency Line:</strong> <a href="tel:1300718760" style="color: #DC2626;">1300 718 760</a></p>
           <p style="margin: 10px 0 0 0;"><strong>Email:</strong> <a href="mailto:info@everguardgroup.com.au" style="color: #DC2626;">info@everguardgroup.com.au</a></p>
         </div>
 
